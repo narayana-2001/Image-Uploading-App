@@ -81,7 +81,7 @@ export default function UploadArea({ globalUser }) {
       formData.append("idToken", token);
       formData.append("uid", globalUser.uid);
 
-      const res = await fetch("http://localhost:4000/user/upload", {
+      const res = await fetch(`${BACKEND_URL}/user/upload`, {
         method: "POST",
         body: formData,
       });
