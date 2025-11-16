@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import UploadBox from "./UploadBox";
 import ImageModal from "./ImageModal";
 import "./UploadArea.css";
+import { BACKEND_URL } from "../constants";
 
 export default function UploadArea({ globalUser }) {
   // --------------------------------------------------------------
@@ -27,8 +28,8 @@ export default function UploadArea({ globalUser }) {
       // Firebase ID token used for backend authentication
       const token = await globalUser.getIdToken();
 
-      // Request user's uploaded image URLs from backend
-      const res = await fetch("http://localhost:4000/user/images", {
+      // Request user's uploaded image URLs from backend fetch(`${BACKEND_URL}`/user/`)
+      const res = await fetch(`${BACKEND_URL}/user/images`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ idToken: token, uid: globalUser.uid }),
@@ -97,7 +98,7 @@ export default function UploadArea({ globalUser }) {
     // --------------------------------------------------------------
     const refreshToken = await globalUser.getIdToken();
 
-    const res = await fetch("http://localhost:4000/user/images", {
+    const res = await fetch(`${BACKEND_URL}/user/images`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ idToken: refreshToken, uid: globalUser.uid }),
