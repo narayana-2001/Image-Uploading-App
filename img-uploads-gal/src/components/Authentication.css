@@ -1,0 +1,123 @@
+/* Full-screen overlay with animation */
+.auth-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  opacity: 0;
+  visibility: hidden;
+ 
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.auth-container.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.auth-container.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Modal form with animation */
+.auth-form {
+  background-color: #000000;
+  color: white;
+  padding: 2rem 3rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  transform: translateY(-30px);
+  opacity: 0;
+  transition: all 0.3s ease;
+  position: relative;
+  border: 6px solid #7701ff;
+}
+
+.auth-form.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.auth-form.hide {
+  transform: translateY(-30px);
+  opacity: 0;
+}
+
+/* Close (X) button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #555;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.close-btn:hover {
+  color: #c2c2c2;
+}
+
+/* Headings */
+.auth-form h2 {
+  margin-bottom: 0.5rem;
+  color: #ececec;
+}
+
+.auth-form p {
+  margin-bottom: 1.5rem;
+  color: #cacaca;
+}
+
+/* Inputs */
+.auth-form input {
+  display: block;
+  width: 100%;
+  padding: 15px 12px;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 1rem;
+}
+
+/* Buttons */
+.auth-form button {
+  background-color: #7701ff;
+  border: none;
+  color: #ffffff;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.auth-form button:hover {
+  background-color: #4e00b4;
+}
+
+/* Divider line */
+.auth-form hr {
+  margin: 1.5rem 0;
+  border: none;
+  border-top: 1px solid #ddd;
+}
+
+/* Register section */
+.register-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}

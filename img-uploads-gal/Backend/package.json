@@ -1,0 +1,21 @@
+{
+  "name": "image-uploader-gallery-backend",
+  "version": "1.0.0",
+  "description": "Backend for image uploader gallery",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.81.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^4.21.2",
+    "firebase-admin": "^13.6.0",
+    "node-fetch": "^3.3.2"
+  }
+}

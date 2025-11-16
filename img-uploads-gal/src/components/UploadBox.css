@@ -1,0 +1,23 @@
+.upload-box {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #000000;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  margin-bottom: 5px;
+}
+
+.upload-box:hover {
+  background-color: #3b0063;
+  transform: scale(1.05);
+}
+
+.upload-box.small {
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  border-radius: 6px;
+}
