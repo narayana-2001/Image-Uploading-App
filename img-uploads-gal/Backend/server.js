@@ -14,7 +14,14 @@ const serviceAccountPath = path.resolve("./firebase-service-account.json");
 const serviceAccount = JSON.parse(fs.readFileSync(serviceAccountPath, "utf-8"));
 
 const app = express();
-app.use(cors());
+const corsOptions = {
+  origin: process.env.FRONTEND_URL || "http://localhost:3000",
+  credentials: true, // Allow cookies and authentication headers
+};
+
+// Use the CORS middleware
+app.use(cors(corsOptions));
+// app.use(cors());
 app.use(express.json());
 app.use(fileUpload());
 
